@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iSuchart::แบบทดสอบ</title>
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
+
+  <!-- mathjax -->
+  <script>
+    MathJax = {
+      loader: { load: ["input/asciimath", "output/chtml"] },
+    };
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/startup.js"></script>
+
+  <!-- <link rel="stylesheet" href="https://isuchart.github.io/exam-zoom/quiz.css" /> -->
+  <link rel="stylesheet" href="quiz.css" />
+
+  <script src="https://code.jquery.com/jquery-3.7.1.slim.js"
+    integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <div class="quiz-container">
+
+    <div class="flex flex-row relative bg-black/50 items-center shadow-xl m-2 rounded-md">
+      <img class="w-12 rounded-full mx-8 my-4" src="https://isuchart.github.io/exam-zoom/2815428.png" alt="avatar"
+        id="profileurl" />
+      <p class="p-5 mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white" id="displaynamefield">
+        DisplayName
+      </p>
+    </div>
+
+<!-- แสดงข้อมูลหน้าแรก -->
+    <div id="info" class="p-4 block">
+      <div>
+        <label for="stdInfo" class="text-gray-000 inline-block pb-2 text-2xl">สวัสดี</label>
+        <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl" type="text" id="stdInfo"
+          name="stdInfo" value="ddd" disabled>
+      </div>
+      <div>
+        <label for="subject" class="text-gray-000 inline-block pb-2 text-2xl">แบบทดสอบเรื่อง</label>
+        <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl" type="text" id="subject" name="subject" value="เก็บคะแนนก่อนปลายภาค 2/66" disabled>
+      </div>
+      <div>
+        <label for="timeScore" class="text-gray-000 inline-block pb-2 text-2xl">ทำข้อสอบ(ครั้ง)</label>
+        <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl" type="text" id="timeScore" name="timeScore" disabled>
+      </div>
+      <div>
+        <label for="maxScore" class="text-gray-000 inline-block pb-2 text-2xl">คะแนนสูงสุด</label>
+        <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl" type="text" id="maxScore" name="maxScore" disabled>
+      </div>
+      <div>
+        <label for="minScore" class="text-gray-000 inline-block pb-2 text-2xl">คะแนนต่ำสุด</label>
+        <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl" type="text" id="minScore" name="minScore" disabled>
+      </div>
+      <div>
+        <label for="avgScore" class="text-gray-000 inline-block pb-2 text-2xl">คะแนนเฉลี่ย</label>
+        <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl" type="text" id="avgScore" name="avgScore" disabled>
+      </div>
+      <div>
+        <input class="w-full bg-blue-600 py-2 rounded-md text-white text-2xl font-medium cursor-pointer" type="submit"
+          id="btnInfo" value="ตกลง" />
+      </div>
+    </div>
+
+      <!-- ฟอร์มสำหรับกรอกข้อมูล -->
+      <!-- <div id="login" class="p-4 hidden"> -->
+          <form id="login" action="" class="flex flex-col gap-4 text-xl p-2 rounded-lg hidden">
+        <div>
+          <label for="room" class="text-gray-000 inline-block pb-2 text-2xl">ห้อง</label>
+          <select class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl required:border-red-500" name="room" id="room" required
+            >
+            <option value="#" selected disabled>เลือกชั้น/ห้อง</option>
+            <option value="ม.5/6">ม.5/6</option>
+            <option value="ม.5/7">ม.5/7</option>
+            <option value="ม.5/8">ม.5/8</option>
+            <option value="ม.5/9">ม.5/9</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="no" class="text-gray-000 inline-block pb-2 text-2xl">เลขที่</label>
+          <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl required:border-red-500" type="tel" id="no"
+            name="no" placeholder="กรอกเลขที่  เช่น 01, 13" required />
+        </div>
+
+        <div>
+          <label for="stdid" class="text-gray-000 inline-block pb-2 text-2xl">เลขประจำตัว</label>
+          <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl required:border-red-500" type="tel" id="stdid"
+            name="stdid" placeholder="กรอกเลขประจำตัว" />
+        </div>
+
+        <div>
+          <label for="prename" class="text-gray-000 inline-block pb-2 text-2xl">คำนำหน้าชื่อ</label>
+          <select class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl required:border-red-500" name="prename"
+            id="prename">
+            <option value="#" selected disabled>เลือกคำนำหน้าชื่อ</option>
+            <option value="นาย">นาย</option>
+            <option value="นางสาว">นางสาว</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="fname" class="text-gray-000 inline-block pb-2 text-2xl">ชื่อ</label>
+          <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl required:border-red-500" type="text" id="fname"
+            name="fname" placeholder="กรอกชื่อ" />
+        </div>
+
+        <div>
+          <label for="sname" class="text-gray-000 inline-block pb-2 text-2xl">นามสกุล</label>
+          <input class="w-full border-gray-200 px-4 py-2 focus:outline-none rounded-md text-2xl required:border-red-500" type="text" id="sname"
+            name="sname" placeholder="กรอกนามสกุล" />
+        </div>
+
+        <div>
+          <input class="w-full bg-blue-600 py-2 rounded-md text-white text-2xl font-medium cursor-pointer" type="submit"
+            id="submit0" value="ตกลง" />
+          <!-- ถ้ากำหนด type="submit" จะโหลดหน้าเว็บใหม      -->
+        </div>
+        </form>
+      <!-- </div> -->
+
+
+      <!-- ส่วนข้อสอบ -->
+      <div id="quiz" class="hidden">
+       
+        <div class="quiz-header">
+          <h2 id="question" class="mb-1 text-gray-900 font-bold text-gray-900 dark:text-white">
+            question text
+          </h2>
+          <hr />
+          <ul class="grid w-full gap-6 md:grid-cols-1">
+            <li>
+              <input type="radio" name="answer" id="a" class="answer hidden peer" />
+              <label for="a" id="a_text"
+                class="inline-flex items-center justify-start w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                question</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="b" class="answer hidden peer" />
+              <label for="b" id="b_text"
+                class="inline-flex items-center justify-start w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">question</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="c" class="answer hidden peer" />
+              <label for="c" id="c_text"
+                class="inline-flex items-center justify-start w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">question</label>
+            </li>
+            <li>
+              <input type="radio" name="answer" id="d" class="answer hidden peer" />
+              <label for="d" id="d_text"
+                class="inline-flex items-center justify-start w-full p-3 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 dark:peer-checked:text-blue-500 peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">question</label>
+            </li>
+          </ul>
+        </div>
+
+        <center>
+          <button type="submit" id="submit"
+            class="px-8 py-3 text-3xl font-medium text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+            ส่งคำตอบ
+          </button>
+        </center>
+        <br />
+      </div>
+    </div>
+
+    <script src="1https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js" integrity="sha256-qXBd/EfAdjOA2FGrGAG+b3YBn2tn5A6bhz+LSgYD96k=" crossorigin="anonymous"></script>
+
+    <script src="myFunction.js"></script>
+    <script src="quizdata.js"></script>
+    <script src="quizconst.js"></script>
+    <script src="quizscript.js"></script>
+    <!-- <script src="quizline.js"></script> -->
+</body>
+
+</html>
