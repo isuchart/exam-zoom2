@@ -300,7 +300,7 @@ function createLine(point){
   }
 
 //กำหนดทศนิยม 2 ทศนิยม
-  function twoDec(num,n) {
+  function numDec(num,n) {
     let d = n+1
     const formattedNumber = num.toLocaleString(undefined, {
       minimumFractionDigits: d,
