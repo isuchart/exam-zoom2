@@ -159,6 +159,7 @@ submitBtn.addEventListener("click", () => {
       if (minScore == 0 || score < minScore) { minScore = score }
       if (maxScore == 0 || score > maxScore) { maxScore = score }
       let avgScore = (maxScore+score)/2
+      let scoreNow = score 
       let userData = {
         room: room,
         no: no,
@@ -171,6 +172,7 @@ submitBtn.addEventListener("click", () => {
         minScore: minScore,
         maxScore: maxScore,
         avgScore: avgScore,
+        score: scoreNow,
       };
 
       var jsonString = JSON.stringify(userData);
