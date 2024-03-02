@@ -22,6 +22,7 @@ function addDataToSheet() {
   console.log(stdData);
 
   let tabRoom = stdData.room;
+  let scoreAvg = numDec(stdData.avgScore,2)
   let url;
   switch (tabRoom) {
     case "ม.4/8":
@@ -44,7 +45,7 @@ function addDataToSheet() {
             // score: `${score}`,
             scoreMax: `${stdData.maxScore}`,
             scoreMin: `${stdData.minScore}`,
-            scoreAvg: `${stdData.avgScore}`,
+            scoreAvg: scoreAvg,
             timeCount: `${stdData.timeCount}`,
           },
         };
