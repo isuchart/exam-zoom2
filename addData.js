@@ -34,7 +34,7 @@ function addDataToSheet() {
           .then((response) => response.json())
           .then(json => {
             // Do something with the data
-            console.log(response.room);
+            console.log(json.room);
           });
 
         var body = {
