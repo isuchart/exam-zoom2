@@ -300,10 +300,10 @@ function createLine(point){
   }
 
 //กำหนดทศนิยม 2 ทศนิยม
-  function numTwoDecimals(number) {
-    const formattedNumber = number.toLocaleString(undefined, {
-      minimumFractionDigits: 2,
-      maximumFractionDigits: 2
+  function twoDec(num,n) {
+    const formattedNumber = num.toLocaleString(undefined, {
+      minimumFractionDigits: n,
+      maximumFractionDigits: n
     });
     return formattedNumber;
   }
