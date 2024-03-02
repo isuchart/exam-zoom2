@@ -45,7 +45,7 @@ function addDataToSheet() {
             // score: `${score}`,
             scoreMax: `${stdData.maxScore}`,
             scoreMin: `${stdData.minScore}`,
-            scoreAvg: scoreAvg,
+            scoreAvg: numDec(scoreAvg,2),
             timeCount: `${stdData.timeCount}`,
           },
         };
