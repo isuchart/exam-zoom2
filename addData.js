@@ -132,7 +132,7 @@ function addDataToSheet() {
     .then((response) => response.json())
     .then((json) => {
       // Do something with object
-      console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
+      // console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
     })
     .catch((error) => {
       console.error("Error:", error);
