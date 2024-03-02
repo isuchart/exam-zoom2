@@ -45,6 +45,7 @@ function addDataToSheet() {
             console.log(json.eights);
             // return json.data
           });
+          })
 
         var body = {
           eight: {
