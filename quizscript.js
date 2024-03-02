@@ -26,6 +26,7 @@ var nTodo = 5 //กำหนดจำนวนข้อสอบที่จะ�
 //ส่วน info แสดงหน้าจอแรก
 var stdInfo = $('#stdInfo')
 var timeCount = $('#timeCount')
+var nowscore = $('#nowScore')
 var maxscore = $('#maxScore')
 var minscore = $('#minScore')
 var avgscore = $('#avgScore')
@@ -54,6 +55,7 @@ if (storedData) {
   } else {
     stdInfo.val(stdData.prename + stdData.fname + " " + stdData.sname + "  เลขที่ " + stdData.no + "  ห้อง " + stdData.room)
     timeCount.val(stdData.timeCount)
+    nowscore.val(stdData.nowScore)
     maxscore.val(stdData.maxScore)
     minscore.val(stdData.minScore)
     avgscore.val(stdData.avgScore)
@@ -159,7 +161,7 @@ submitBtn.addEventListener("click", () => {
       if (minScore == 0 || score < minScore) { minScore = score }
       if (maxScore == 0 || score > maxScore) { maxScore = score }
       let avgScore = (maxScore+score)/2
-      let scoreNow = score 
+      let nowScore = score 
       let userData = {
         room: room,
         no: no,
@@ -172,7 +174,7 @@ submitBtn.addEventListener("click", () => {
         minScore: minScore,
         maxScore: maxScore,
         avgScore: avgScore,
-        score: scoreNow,
+        score: nowScore,
       };
 
       var jsonString = JSON.stringify(userData);
