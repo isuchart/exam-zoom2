@@ -42,7 +42,7 @@ function addDataToSheet() {
             //   );
             // });
             console.log(json);
-            // console.log(json.eights);
+            console.log(json.stdid);
             // return json.data
           // });
           })
