@@ -301,10 +301,10 @@ function createLine(point){
 
 //กำหนดทศนิยม 2 ทศนิยม
   function numDec(num,n) {
-    let d = n+1
+    // let d = n+1
     const formattedNumber = num.toLocaleString(undefined, {
-      minimumFractionDigits: d,
-      maximumFractionDigits: d,
+      minimumFractionDigits: n,
+      maximumFractionDigits: n,
     });
     return formattedNumber;
   }
