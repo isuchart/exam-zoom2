@@ -58,7 +58,7 @@ if (storedData) {
     nowscore.val(stdData.score)
     maxscore.val(stdData.maxScore)
     minscore.val(stdData.minScore)
-    avgscore.val((stdData.avgScore).toLocaleString())
+    avgscore.val(numTwoDecimals(stdData.avgScore))
     // console.log("ข้อมูลถูกโหลดมาจาก Local Storage");
   }
 } else {
