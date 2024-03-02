@@ -28,6 +28,7 @@ var stdInfo = $('#stdInfo')
 var timeCount = $('#timeCount')
 var maxscore = $('#maxScore')
 var minscore = $('#minScore')
+var avgscore = $('#avgScore')
 // var btnInfo = $('#btnInfo') //กำหนดแบบนี้ไม่ได้
 
 //iquiz กำหนดเพื่อไม่ให้ข้อสอบซ้ำ
@@ -55,6 +56,7 @@ if (storedData) {
     timeCount.val(stdData.timeCount)
     maxscore.val(stdData.maxScore)
     minscore.val(stdData.minScore)
+    avgscore.val(stdData.avgScore)
     // console.log("ข้อมูลถูกโหลดมาจาก Local Storage");
   }
 } else {
@@ -156,7 +158,7 @@ submitBtn.addEventListener("click", () => {
       timeCount++
       if (minScore == 0 || score < minScore) { minScore = score }
       if (maxScore == 0 || score > maxScore) { maxScore = score }
-
+      avgScore = (maxScore+score)/2
       let userData = {
         room: room,
         no: no,
@@ -168,6 +170,7 @@ submitBtn.addEventListener("click", () => {
         timeCount: timeCount,
         minScore: minScore,
         maxScore: maxScore,
+        avgScore: avgScore,
       };
 
       var jsonString = JSON.stringify(userData);
@@ -178,62 +181,6 @@ submitBtn.addEventListener("click", () => {
 
       // เพิ่มข้อมูลลงฐานข้อมูล sheet
       addDataToSheet()
-
-      // let conf = {
-      //   calendar: "buddhist", // buddhist, iso8601
-      //   dateStyle: "long", // full, long, medium, short
-      // };
-      // let dd = new Date();
-      // let myDate = dd.toLocaleString("th-TH", conf);
-    
-      // let conf2 = {
-      //   calendar: "buddhist", // buddhist, iso8601
-      //   timeStyle: "medium", // full, long, medium, short
-      // };
-      // let tt = new Date();
-      // let milliSecTime = tt.getMilliseconds(); // มิลลิวินาที
-      // let myTime = tt.toLocaleString("th-TH", conf2);
-      // let timeTest = myTime + ":" + milliSecTime;
-    
-      // เพิ่มข้อมูลลงฐานข้อมูล sheet
-      // var storedData = localStorage.getItem("user");
-      // var stdData = JSON.parse(storedData);
-      // console.log(stdData);
-      
-      // let url = 'https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662/data';
-      // let body = {
-      //   datum: {
-      //     "date": myDate,
-      //     "time": timeTest,
-      //     "lineId": `${liff.getDecodedIDToken().sub}`,
-      //     "lineName": `${liff.getDecodedIDToken().name}`,
-      //     "room": `${room.val()}`,
-      //     "no": `${no.val()}`,
-      //     "stdid": `${stdid.val()}`,
-      //     "prename": `${prename.val()}`,
-      //     "fname": `${fname.val()}`,
-      //     "sname": `${sname.val()}`,
-      //     "subject": `${subjectNow}`,
-      //     "score": `${score}`,
-      //   }
-      // };
-      // // จาก chatGPT
-      // fetch(url, {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json' // เพิ่ม header สำหรับระบุประเภทข้อมูลเป็น JSON
-      //   },
-      //   body: JSON.stringify(body)
-      // })
-      //   .then((response) => response.json())
-      //   .then(json => {
-      //     // Do something with object
-      //     console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
-      //   })
-      //   .catch(error => {
-      //     console.error('Error:', error);
-      //   });
-
 
       quizContainer.innerHTML = `
       <div class="flex flex-row relative bg-black/50 items-center shadow-xl m-2 ">
