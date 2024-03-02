@@ -157,7 +157,7 @@ submitBtn.addEventListener("click", () => {
       let minScore = stdData.minScore
       let maxScore = stdData.maxScore
       let subject = subjectNow
-      let totalScore = stdData.totalscore
+      let totalScore = stdData.totalScore
 
       timeCount++
       if (minScore == 0 || score < minScore) { minScore = score }
@@ -178,7 +178,7 @@ submitBtn.addEventListener("click", () => {
         maxScore: maxScore,
         avgScore: avgScore,
         score: nowScore,
-        totalscore: totalScore,
+        totalScore: totalScore,
       };
 
       var jsonString = JSON.stringify(userData);
