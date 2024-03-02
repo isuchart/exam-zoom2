@@ -22,13 +22,21 @@ function addDataToSheet() {
   console.log(stdData);
 
   let tabRoom = stdData.room;
-  let scoreAvg = numDec(stdData.avgScore,2)
+  let scoreAvg = numDec(stdData.avgScore, 2);
   let url;
   switch (tabRoom) {
     case "ม.4/8":
       {
         url =
           "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight";
+
+          fetch(url)
+          .then((response) => response.json())
+          .then(json => {
+            // Do something with the data
+            console.log(json.eights);
+          });
+
         var body = {
           eight: {
             date: myDate,
@@ -45,7 +53,7 @@ function addDataToSheet() {
             // score: `${score}`,
             scoreMax: `${stdData.maxScore}`,
             scoreMin: `${stdData.minScore}`,
-            scoreAvg: numDec(scoreAvg,2),
+            scoreAvg: numDec(scoreAvg, 2),
             timeCount: `${stdData.timeCount}`,
           },
         };
@@ -72,7 +80,7 @@ function addDataToSheet() {
             // score: `${score}`,
             scoreMax: `${stdData.maxScore}`,
             scoreMin: `${stdData.minScore}`,
-            scoreAvg: `${stdData.avgScore}`,
+            scoreAvg: numDec(scoreAvg, 2),
             timeCount: `${stdData.timeCount}`,
           },
         };
@@ -95,10 +103,15 @@ function addDataToSheet() {
           fname: `${stdData.fname}`,
           sname: `${stdData.sname}`,
           subject: `${subjectNow}`,
-          score: `${score}`,
+          // score: `${score}`,
+          scoreMax: `${stdData.maxScore}`,
+          scoreMin: `${stdData.minScore}`,
+          scoreAvg: numDec(scoreAvg, 2),
+          timeCount: `${stdData.timeCount}`,
         },
       };
   }
+
   fetch(url, {
     method: "POST",
     headers: {
@@ -109,7 +122,7 @@ function addDataToSheet() {
     .then((response) => response.json())
     .then((json) => {
       // Do something with object
-      // console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
+      console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
     })
     .catch((error) => {
       console.error("Error:", error);
