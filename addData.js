@@ -30,11 +30,20 @@ function addDataToSheet() {
         url =
           "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight";
 
-          fetch(url)
+        fetch(url)
           .then((response) => response.json())
-          .then(json => {
+          .then((json) => {
             // Do something with the data
-            console.log(json);
+            json.data.map((val) => {
+            //   // console.log(val.name,val.surname,val.score,val.add)
+            //   // $showData.append(`<tr><td>${val.name}</td><td>${val.surname}</td><td>${val.userid}</td><td>${val.salary}</td><td>${val.position}</td></tr>`)
+            //   $showData.append(
+            //     `<tr><td>${val.id}</td><td>${val.firstname}</td><td>${val.lastname}</td><td>${val.age}</td><td>${val.position}</td></tr>`
+            //   );
+            // });
+            // console.log(json.data);
+            console.log(json.eights);
+            // return json.data
           });
 
         var body = {
