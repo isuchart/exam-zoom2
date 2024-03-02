@@ -413,6 +413,7 @@ submit0Btn.addEventListener("click", () => {
     timeCount: 0,
     minScore: 0,
     maxScore: 0,
+    score: 0,
   };
 
   var jsonString = JSON.stringify(userData);
