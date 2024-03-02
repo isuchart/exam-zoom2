@@ -25,7 +25,7 @@ var nTodo = 5 //กำหนดจำนวนข้อสอบที่จะ�
 
 //ส่วน info แสดงหน้าจอแรก
 var stdInfo = $('#stdInfo')
-var timescore = $('#timeScore')
+var timeCount = $('#timeCount')
 var maxscore = $('#maxScore')
 var minscore = $('#minScore')
 // var btnInfo = $('#btnInfo') //กำหนดแบบนี้ไม่ได้
@@ -52,7 +52,7 @@ if (storedData) {
     $('#info').hide()
   } else {
     stdInfo.val(stdData.prename + stdData.fname + " " + stdData.sname + "  เลขที่ " + stdData.no + "  ห้อง " + stdData.room)
-    timescore.val(stdData.timeScore)
+    timeCount.val(stdData.timeCount)
     maxscore.val(stdData.maxScore)
     minscore.val(stdData.minScore)
     // console.log("ข้อมูลถูกโหลดมาจาก Local Storage");
@@ -149,11 +149,11 @@ submitBtn.addEventListener("click", () => {
       prename = stdData.prename
       fname = stdData.fname
       sname = stdData.sname
-      let timeScore = stdData.timeScore
+      let timeCount = stdData.timeCount
       let minScore = stdData.minScore
       let maxScore = stdData.maxScore
       let subject = subjectNow
-      timeScore++
+      timeCount++
       if (minScore == 0 || score < minScore) { minScore = score }
       if (maxScore == 0 || score > maxScore) { maxScore = score }
 
@@ -165,7 +165,7 @@ submitBtn.addEventListener("click", () => {
         fname: fname,
         sname: sname,
         subject: subjectNow,
-        timeScore: timeScore,
+        timeCount: timeCount,
         minScore: minScore,
         maxScore: maxScore,
       };
@@ -459,7 +459,7 @@ submit0Btn.addEventListener("click", () => {
     fname: fname,
     sname: sname,
     subject: subjectNow,
-    timeScore: 0,
+    timeCount: 0,
     minScore: 0,
     maxScore: 0,
   };
