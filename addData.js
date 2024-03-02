@@ -41,7 +41,11 @@ function addDataToSheet() {
             fname: `${stdData.fname}`,
             sname: `${stdData.sname}`,
             subject: `${subjectNow}`,
-            score: `${score}`,
+            // score: `${score}`,
+            scoreMax: `${stdData.maxScore}`,
+            scoreMin: `${stdData.minScore}`,
+            scoreAvg: `${stdData.avgScore}`,
+            timeCount: `${stdData.timeCount}`,
           },
         };
       }
@@ -64,7 +68,11 @@ function addDataToSheet() {
             fname: `${stdData.fname}`,
             sname: `${stdData.sname}`,
             subject: `${subjectNow}`,
-            score: `${score}`,
+            // score: `${score}`,
+            scoreMax: `${stdData.maxScore}`,
+            scoreMin: `${stdData.minScore}`,
+            scoreAvg: `${stdData.avgScore}`,
+            timeCount: `${stdData.timeCount}`,
           },
         };
       }
