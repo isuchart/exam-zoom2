@@ -178,6 +178,7 @@ submitBtn.addEventListener("click", () => {
         maxScore: maxScore,
         avgScore: avgScore,
         score: nowScore,
+        totalscore: totalScore,
       };
 
       var jsonString = JSON.stringify(userData);
