@@ -41,8 +41,8 @@ function addDataToSheet() {
             //     `<tr><td>${val.id}</td><td>${val.firstname}</td><td>${val.lastname}</td><td>${val.age}</td><td>${val.position}</td></tr>`
             //   );
             // });
-            // console.log(json.data);
-            console.log(json.eight);
+            console.log(json);
+            // console.log(json.eights);
             // return json.data
           // });
           })
