@@ -157,7 +157,7 @@ submitBtn.addEventListener("click", () => {
       let minScore = stdData.minScore
       let maxScore = stdData.maxScore
       let subject = subjectNow
-      let totalScore = stdData.totalScore
+      let totalScore = stdData.totalscore
 
       timeCount++
       if (minScore == 0 || score < minScore) { minScore = score }
