@@ -158,7 +158,7 @@ submitBtn.addEventListener("click", () => {
       timeCount++
       if (minScore == 0 || score < minScore) { minScore = score }
       if (maxScore == 0 || score > maxScore) { maxScore = score }
-      avgScore = (maxScore+score)/2
+      let avgScore = (maxScore+score)/2
       let userData = {
         room: room,
         no: no,
