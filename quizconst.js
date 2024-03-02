@@ -5,7 +5,7 @@ let ii = 0 // เริ่มต้นที่ 0 แทนที่จะเร
 // let iiEnd = 43
 let iiEnd = ex.length
 do {
-   console.log(ii);
+   // console.log(ii);
    for(let j = 0; j <= 3; j++) {
       let tempData;
       if(j == 0) {
