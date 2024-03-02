@@ -55,7 +55,7 @@ if (storedData) {
   } else {
     stdInfo.val(stdData.prename + stdData.fname + " " + stdData.sname + "  เลขที่ " + stdData.no + "  ห้อง " + stdData.room)
     timeCount.val(stdData.timeCount)
-    nowscore.val(stdData.nowScore)
+    nowscore.val(stdData.score)
     maxscore.val(stdData.maxScore)
     minscore.val(stdData.minScore)
     avgscore.val(stdData.avgScore)
