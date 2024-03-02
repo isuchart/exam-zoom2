@@ -34,7 +34,7 @@ function addDataToSheet() {
           .then((response) => response.json())
           .then((json) => {
             // Do something with the data
-            // json.data.map((val) => {
+            json.eight.filter(val, res)((val) => {
             //   // console.log(val.name,val.surname,val.score,val.add)
             //   // $showData.append(`<tr><td>${val.name}</td><td>${val.surname}</td><td>${val.userid}</td><td>${val.salary}</td><td>${val.position}</td></tr>`)
             //   $showData.append(
@@ -42,9 +42,9 @@ function addDataToSheet() {
             //   );
             // });
             console.log(json);
-            console.log(eight[0]);
+            console.log(json.eight);
             // return json.data
-          // });
+          });
           })
 
         var body = {
