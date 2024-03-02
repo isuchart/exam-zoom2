@@ -177,7 +177,7 @@ submitBtn.addEventListener("click", () => {
 
 
       // เพิ่มข้อมูลลงฐานข้อมูล sheet
-      // addDataToSheet()
+      addDataToSheet()
 
       // let conf = {
       //   calendar: "buddhist", // buddhist, iso8601

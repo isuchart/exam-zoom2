@@ -26,9 +26,9 @@ console.log(stdData)
 let tabRoom = stdData.room
 let url;
 switch (tabRoom) {
-case "ม.5/6":
+case "ม.4/8":
 {
-url = "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662/six";
+url = "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight";
 var body = {
   six: {
   "date": myDate,
@@ -48,9 +48,9 @@ var body = {
 }
 break;
 
-case "ม.5/7":
+case "ม.4/10":
 {
-url = "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662/seven";
+url = "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/ten";
 var body = {
   seven: {
   "date": myDate,
@@ -115,7 +115,7 @@ var body = {
 break;
 
 default:
-url = "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662/data";
+url = "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/data";
 var body = {
 datum: {
   "date": myDate,
