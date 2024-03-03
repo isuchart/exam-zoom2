@@ -34,14 +34,14 @@ function addDataToSheet() {
           .then((response) => response.json())
           .then((json) => {
             // Do something with the data
-            json.eight.filter(val, res)((val) => {
+            json.eight.map((val) => {
             //   // console.log(val.name,val.surname,val.score,val.add)
             //   // $showData.append(`<tr><td>${val.name}</td><td>${val.surname}</td><td>${val.userid}</td><td>${val.salary}</td><td>${val.position}</td></tr>`)
             //   $showData.append(
             //     `<tr><td>${val.id}</td><td>${val.firstname}</td><td>${val.lastname}</td><td>${val.age}</td><td>${val.position}</td></tr>`
             //   );
             // });
-            console.log(json);
+            console.log(val.room);
             // console.log(json.eight);
             // return json.data
           });
