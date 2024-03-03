@@ -170,19 +170,19 @@ function addDataToSheet() {
       };
   }
 
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json", // เพิ่ม header สำหรับระบุประเภทข้อมูลเป็น JSON
-    },
-    body: JSON.stringify(body),
-  })
-    .then((response) => response.json())
-    .then((json) => {
-      // Do something with object
-      // console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+  // fetch(url, {
+  //   method: "POST",
+  //   headers: {
+  //     "Content-Type": "application/json", // เพิ่ม header สำหรับระบุประเภทข้อมูลเป็น JSON
+  //   },
+  //   body: JSON.stringify(body),
+  // })
+  //   .then((response) => response.json())
+  //   .then((json) => {
+  //     // Do something with object
+  //     // console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
+  //   })
+  //   .catch((error) => {
+  //     console.error("Error:", error);
+  //   });
 }
