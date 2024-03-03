@@ -37,7 +37,7 @@ function addDataToSheet() {
             json.eight.map((val) => {
               // if(val.stdid==stdData.stdid){
               if(val.stdid=="88889"){
-                console.log(val.stdid,val.room);
+                console.log(val.stdid,val.room,val.scoreMax);
               }
             // return json.data
           });
