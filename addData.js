@@ -35,7 +35,9 @@ function addDataToSheet() {
           .then((json) => {
             // Do something with the data
             json.eight.map((val) => {
-            console.log(val.stdid,val.room);
+              if(val.stdid==stdData.stdid){
+                console.log(val.stdid,val.room);
+              }
             // return json.data
           });
           console.log(json.eight);
