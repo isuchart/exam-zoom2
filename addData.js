@@ -70,7 +70,7 @@ function addDataToSheet() {
                     headers: {
                       "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({ datum: body1 }),
+                    body: JSON.stringify({ eight: body }),
                   })
                     .then((response) => {
                       if (!response.ok) {
@@ -80,7 +80,7 @@ function addDataToSheet() {
                     })
                     .then((json) => {
                       // Do something with object
-                      console.log(json.datum);
+                      console.log(json.eight);
                     })
                     .catch((error) => {
                       console.error(
