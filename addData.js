@@ -35,16 +35,65 @@ function addDataToSheet() {
           .then((json) => {
             // Do something with the data
             json.eight.map((val) => {
-              if(val.stdid==stdData.stdid){
-              // if(val.stdid=="88889"){
-                if(val.scoreMax<stdData.score || val.scoreAvg>stdData.score){
-                  console.log(val.id,val.stdid,val.room,val.scoreMax);
+              if (val.stdid == stdData.stdid) {
+                // if(val.stdid=="88889"){
+                if (
+                  val.scoreMax < stdData.score ||
+                  val.scoreAvg > stdData.score
+                ) {
+                  console.log(val.id, val.stdid, val.room, val.scoreMax);
+                  let url3 =
+                    "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight/"+val.id
+                    var body = {
+                      eight: {
+                        date: myDate,
+                        time: timeTest,
+                        lineId: `${liff.getDecodedIDToken().sub}`,
+                        lineName: `${liff.getDecodedIDToken().name}`,
+                        room: `${stdData.room}`,
+                        no: `${stdData.no}`,
+                        stdid: `${stdData.stdid}`,
+                        prename: `${stdData.prename}`,
+                        fname: `${stdData.fname}`,
+                        sname: `${stdData.sname}`,
+                        subject: `${subjectNow}`,
+                        // score: `${score}`,
+                        scoreMax: `${stdData.maxScore}`,
+                        scoreMin: `${stdData.minScore}`,
+                        scoreAvg: numDec(scoreAvg, 2),
+                        timeCount: `${stdData.timeCount}`,
+                      },
+                    };
+
+                  fetch(url3, {
+                    method: "PUT",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ datum: body1 }),
+                  })
+                    .then((response) => {
+                      if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                      }
+                      return response.json();
+                    })
+                    .then((json) => {
+                      // Do something with object
+                      console.log(json.datum);
+                    })
+                    .catch((error) => {
+                      console.error(
+                        "There was a problem with the fetch operation:",
+                        error
+                      );
+                    });
                 }
               }
-            // return json.data
+              // return json.data
+            });
+            console.log(json.eight);
           });
-          console.log(json.eight);
-          })
 
         var body = {
           eight: {
