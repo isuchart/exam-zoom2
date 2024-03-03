@@ -35,12 +35,6 @@ function addDataToSheet() {
           .then((json) => {
             // Do something with the data
             json.eight.map((val) => {
-            //   // console.log(val.name,val.surname,val.score,val.add)
-            //   // $showData.append(`<tr><td>${val.name}</td><td>${val.surname}</td><td>${val.userid}</td><td>${val.salary}</td><td>${val.position}</td></tr>`)
-            //   $showData.append(
-            //     `<tr><td>${val.id}</td><td>${val.firstname}</td><td>${val.lastname}</td><td>${val.age}</td><td>${val.position}</td></tr>`
-            //   );
-            // });
             console.log(val.room);
             // return json.data
           });
