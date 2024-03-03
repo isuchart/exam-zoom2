@@ -80,8 +80,8 @@ function addDataToSheet() {
                     })
                     .then((json) => {
                       // Do something with object
-                      // console.log(json.eight);
-                      console.log(response.json());
+                      console.log(json.eight);
+                      // console.log(response.json());
                     })
                     .catch((error) => {
                       console.error(
