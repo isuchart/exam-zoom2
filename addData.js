@@ -35,7 +35,7 @@ function addDataToSheet() {
           .then((json) => {
             // Do something with the data
             json.eight.map((val) => {
-            console.log(val.room);
+            console.log(val.stdid,val.room);
             // return json.data
           });
           console.log(json.eight);
