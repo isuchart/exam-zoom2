@@ -42,9 +42,9 @@ function addDataToSheet() {
             //   );
             // });
             console.log(val.room);
-            // console.log(json.eight);
             // return json.data
           });
+          console.log(json.eight);
           })
 
         var body = {
