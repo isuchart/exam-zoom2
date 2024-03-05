@@ -23,6 +23,28 @@ function addDataToSheet() {
 
   let tabRoom = stdData.room;
   let scoreAvg = numDec(stdData.avgScore, 2);
+
+  var body = {
+    eight: {
+      date: myDate,
+      time: timeTest,
+      lineId: `${liff.getDecodedIDToken().sub}`,
+      lineName: `${liff.getDecodedIDToken().name}`,
+      room: `${stdData.room}`,
+      no: `${stdData.no}`,
+      stdid: `${stdData.stdid}`,
+      prename: `${stdData.prename}`,
+      fname: `${stdData.fname}`,
+      sname: `${stdData.sname}`,
+      subject: `${subjectNow}`,
+      // score: `${score}`,
+      scoreMax: `${stdData.maxScore}`,
+      scoreMin: `${stdData.minScore}`,
+      scoreAvg: numDec(scoreAvg, 2),
+      timeCount: `${stdData.timeCount}`,
+    },
+  };
+
   let url;
   switch (tabRoom) {
     case "ม.4/8":
@@ -45,26 +67,6 @@ function addDataToSheet() {
                   let url3 =
                     "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight/"+val.id
                     console.log(url3)
-                    var body = {
-                      eight: {
-                        date: myDate,
-                        time: timeTest,
-                        lineId: `${liff.getDecodedIDToken().sub}`,
-                        lineName: `${liff.getDecodedIDToken().name}`,
-                        room: `${stdData.room}`,
-                        no: `${stdData.no}`,
-                        stdid: `${stdData.stdid}`,
-                        prename: `${stdData.prename}`,
-                        fname: `${stdData.fname}`,
-                        sname: `${stdData.sname}`,
-                        subject: `${subjectNow}`,
-                        // score: `${score}`,
-                        scoreMax: `${stdData.maxScore}`,
-                        scoreMin: `${stdData.minScore}`,
-                        scoreAvg: numDec(scoreAvg, 2),
-                        timeCount: `${stdData.timeCount}`,
-                      },
-                    };
 
                   fetch(url3, {
                     method: "PUT",
