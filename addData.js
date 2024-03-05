@@ -39,7 +39,7 @@ function addDataToSheet() {
                 // if(val.stdid=="88889"){
                 if (
                   parseInt(val.scoreMax) < stdData.score ||
-                  parseInt(val.scoreAvg) > stdData.score
+                  parseInt(val.scoreMin) > stdData.score
                 ) {
                   console.log(val.id, val.stdid, val.room, val.scoreMax);
                   let url3 =
