@@ -37,6 +37,7 @@ function addDataToSheet() {
             json.eight.map((val) => {
               if (val.stdid == stdData.stdid) {
                 // if(val.stdid=="88889"){
+                  console.log(val.stdid,val.scoreMax,val.scoreMin)
                 if (
                   parseInt(val.scoreMax) < stdData.score ||
                   parseInt(val.scoreMin) > stdData.score
