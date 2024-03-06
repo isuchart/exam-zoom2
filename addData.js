@@ -110,7 +110,9 @@ function addDataToSheet() {
                   .catch((error) => {
                     console.error("Error:", error);
                   });
+                  break
               }
+              
               // return json.data
             });
             console.log(json.eight);
