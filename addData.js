@@ -94,52 +94,52 @@ function addDataToSheet() {
                       );
                     });
                 }
-              }else {
-                fetch(url, {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json", // เพิ่ม header สำหรับระบุประเภทข้อมูลเป็น JSON
-                  },
-                  body: JSON.stringify(body),
-                })
-                  .then((response) => response.json())
-                  .then((json) => {
-                    // Do something with object
-                    // console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
-                  })
-                  .catch((error) => {
-                    console.error("Error:", error);
-                  });
-                  break
               }
+              // else {
+              //   fetch(url, {
+              //     method: "POST",
+              //     headers: {
+              //       "Content-Type": "application/json", // เพิ่ม header สำหรับระบุประเภทข้อมูลเป็น JSON
+              //     },
+              //     body: JSON.stringify(body),
+              //   })
+              //     .then((response) => response.json())
+              //     .then((json) => {
+              //       // Do something with object
+              //       // console.log(json.datum); // เปลี่ยนเป็น json.datum แทน body.datum
+              //     })
+              //     .catch((error) => {
+              //       console.error("Error:", error);
+              //     });
+              //     break
+              // }
               
               // return json.data
             });
             console.log(json.eight);
           });
 
-        var body = {
-          eight: {
-            date: myDate,
-            time: timeTest,
-            lineId: `${liff.getDecodedIDToken().sub}`,
-            lineName: `${liff.getDecodedIDToken().name}`,
-            room: `${stdData.room}`,
-            no: `${stdData.no}`,
-            stdid: `${stdData.stdid}`,
-            prename: `${stdData.prename}`,
-            fname: `${stdData.fname}`,
-            sname: `${stdData.sname}`,
-            subject: `${subjectNow}`,
-            // score: `${score}`,
-            scoreMax: `${stdData.maxScore}`,
-            scoreMin: `${stdData.minScore}`,
-            scoreAvg: numDec(scoreAvg, 2),
-            timeCount: `${stdData.timeCount}`,
-          },
-        };
+        // var body = {
+        //   eight: {
+        //     date: myDate,
+        //     time: timeTest,
+        //     lineId: `${liff.getDecodedIDToken().sub}`,
+        //     lineName: `${liff.getDecodedIDToken().name}`,
+        //     room: `${stdData.room}`,
+        //     no: `${stdData.no}`,
+        //     stdid: `${stdData.stdid}`,
+        //     prename: `${stdData.prename}`,
+        //     fname: `${stdData.fname}`,
+        //     sname: `${stdData.sname}`,
+        //     subject: `${subjectNow}`,
+        //     // score: `${score}`,
+        //     scoreMax: `${stdData.maxScore}`,
+        //     scoreMin: `${stdData.minScore}`,
+        //     scoreAvg: numDec(scoreAvg, 2),
+        //     timeCount: `${stdData.timeCount}`,
+        //   },
+        // };
       }
-      break;
 
     case "ม.4/10":
       {
