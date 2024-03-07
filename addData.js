@@ -73,8 +73,8 @@ function addDataToSheet() {
                     headers: {
                       "Content-Type": "application/json",
                     },
-                    body: JSON.stringify(body),
-                    // body: JSON.stringify({ eight: body }),
+                    // body: JSON.stringify(body),
+                    body: JSON.stringify({ eight: body }),
                   })
                     .then((response) => {
                       if (!response.ok) {
