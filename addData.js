@@ -52,6 +52,27 @@ function addDataToSheet() {
         url =
           "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight";
 
+          var body = {
+            eight: {
+              date: myDate,
+              time: timeTest,
+              lineId: `${liff.getDecodedIDToken().sub}`,
+              lineName: `${liff.getDecodedIDToken().name}`,
+              room: `${stdData.room}`,
+              no: `${stdData.no}`,
+              stdid: `${stdData.stdid}`,
+              prename: `${stdData.prename}`,
+              fname: `${stdData.fname}`,
+              sname: `${stdData.sname}`,
+              subject: `${subjectNow}`,
+              // score: `${score}`,
+              scoreMax: `${stdData.maxScore}`,
+              scoreMin: `${stdData.minScore}`,
+              scoreAvg: numDec(scoreAvg, 2),
+              timeCount: `${stdData.timeCount}`,
+            },
+          };
+
         fetch(url)
           .then((response) => response.json())
           .then((json) => {
