@@ -65,7 +65,8 @@ function addDataToSheet() {
                 ) {
                   console.log(val.id, val.stdid, val.room, val.scoreMax,val.scoreMin,stdData.score);
                   let url3 =
-                    "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight/"+val.id
+                    // "https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight/"+val.id
+                    'https://api.sheety.co/2fb80a9f78e03a86a9c645b99d92db92/score662M4Sheety/eight/2'
                     console.log(url3)
 
                   fetch(url3, {
